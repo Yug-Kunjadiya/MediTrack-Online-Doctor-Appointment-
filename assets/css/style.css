@@ -1,0 +1,585 @@
+/* assets/css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
+:root {
+    --primary-color: #3498db; 
+    --secondary-color: #2ecc71; 
+    --accent-color: #e67e22; 
+    --light-bg: #f8f9fa; 
+    --content-bg: #ffffff; 
+    --white-bg: #ffffff;
+    --dark-text: #343a40; 
+    --medium-text: #000000;
+    --light-text: #f8f9fa; 
+    --muted-text: #6c757d;
+    --border-color: #dee2e6;
+    --card-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.06); /* Softer shadow */
+    --border-radius: 0.375rem; 
+    --navbar-height: 70px; /* ADJUST THIS TO YOUR ACTUAL NAVBAR HEIGHT */
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    background-color: #ffffff;  /*Cleaner white background */
+    color: var(--dark-text);
+    line-height: 1.65;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+    padding-top: var(--navbar-height); /* This is the key for fixed-top navbar */
+    background-color: var(--content-bg); /* Set a general light background for body */
+    
+    
+}
+body.landing-page {
+    background-color: var(--white-bg);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9; /* Darker shade of primary */
+    text-decoration: none;
+}
+
+.find-doctor-page .doctor-card-img {
+    width: 90px !important;  /* Make image smaller */
+    height: 90px !important; /* Make image smaller */
+    object-fit: cover;
+    border-radius: 50%; /* Keep it circular */
+    margin-bottom: 0.5rem !important;
+    border: 2px solid var(--border-color, #dee2e6); /* Use your CSS variable or a fallback */
+}
+.find-doctor-page .doctor-card .card-body {
+    padding: 1rem !important; /* Adjust overall card padding */
+}
+
+.find-doctor-page .doctor-card h5.card-title {
+    margin-top: 0.25rem !important; /* Remove extra top margin from doctor name */
+    margin-bottom: 0.25rem !important; /* Less space after name */
+    font-size: 1.05rem; /* Adjust font size if needed */
+}
+
+.find-doctor-page .doctor-card p.card-text {
+    margin-bottom: 0.35rem !important; /* Adjust space around specialization */
+    font-size: 0.85rem;
+}
+
+.find-doctor-page .doctor-list-rating {
+    margin-bottom: 0.5rem !important; /* Adjust space around rating */
+    font-size: 0.8rem;
+}
+
+/* General fix for potential extra space from Bootstrap rows/cols if not intended */
+.find-doctor-page .row.g-4 { /* If you used g-4 for gutters */
+    --bs-gutter-x: 1rem; /* Reduce horizontal gutter */
+    --bs-gutter-y: 1rem; /* Reduce vertical gutter */
+}
+.find-doctor-page .doctor-card .btn { /* Target button inside doctor card */
+    padding: 0.5rem 1rem; /* Smaller button padding */
+    font-size: 0.8rem; /* Smaller button font */
+}
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white; /* This makes text white on hover */
+}
+
+.btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    padding: 0.6rem 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.btn-secondary {
+    background-color: var(--muted-text);
+    border-color: var(--muted-text);
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.btn-success {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+.btn-success:hover {
+    background-color: #27ae60;
+    border-color: #27ae60;
+}
+.btn-info {
+    background-color: #17a2b8; /* Bootstrap info */
+    border-color: #17a2b8;
+}
+.btn-info:hover{
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    background-color: #fff !important; /* Force white background for main nav */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--primary-color) !important;
+}
+.navbar-nav .nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+    color: var(--primary-color) !important;
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.navbar.navbar-dark.bg-success .navbar-text,
+.navbar.navbar-dark.bg-success .nav-link {
+    color: #000000 !important; /* Changed to black for better visibility */
+}
+
+.navbar.navbar-dark.bg-success .nav-link:hover {
+    color: #333333 !important; /* Slightly lighter black on hover */
+}
+.navbar-nav .nav-item a.btn { /* For login/register buttons in nav */
+    color: #020202 !important;
+    padding: 0.5rem 1rem;
+}
+.navbar-nav .nav-item a.btn-primary:hover {
+    
+    color: #fff !important;
+}
+main {
+    position: relative;
+    margin-left: 260px;
+    padding-top: var(--navbar-height);
+    padding: 25px;
+    width: calc(100% - 260px);
+    flex-grow: 1;
+}
+
+/* Cards */
+.card {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease-in-out;
+     background-color: var(--white-bg); 
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,0.12);
+}
+.card-header {
+    background-color: var(--light-bg);
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+.card-header.bg-primary { color: white; }
+.card-header.bg-success { color: white; }
+.card-header.bg-info { color: white; }
+.card-header.bg-warning { color: var(--dark-text); } /* Ensure text contrast on warning */
+.card-header.bg-danger { color: white; }
+
+
+/* Forms */
+.form-control {
+    border-radius: var(--border-radius);
+    border: 1px solid #ced4da;
+    padding: 0.75rem 1rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+.form-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+
+/* Alerts */
+.alert {
+    border-radius: var(--border-radius);
+    border-width: 0px; /* Let background color define it */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.alert-primary { background-color: #cfe2ff; color: #0a58ca; }
+.alert-success { background-color: #d1e7dd; color: #0f5132; }
+.alert-danger { background-color: #f8d7da; color: #842029; }
+.alert-warning { background-color: #fff3cd; color: #664d03; }
+.alert-info { background-color: #cff4fc; color: #055160; }
+
+
+/* Footer */
+.footer { /* Add a class to your footer element if not already there */
+    background-color: var(--dark-text);
+    color: rgba(255,255,255,0.7);
+    padding: 2rem 0;
+    margin-top: auto; /* Push footer to bottom */
+}
+.footer a {
+    color: rgba(255,255,255,0.9);
+}
+.footer a:hover {
+    color: #fff;
+}
+
+
+/* Jumbotron/Hero Section on Homepage */
+.hero-section { /* You might need to add this class to the p-5 div on index.php */
+    background: linear-gradient(135deg, rgba(52,152,219,0.8), rgba(41,128,185,0.9)), url('../img/hero-bg.jpg'); /* Add a nice background image */
+    background-size: cover;
+    background-position: center center;
+    color: white;
+    border-radius: var(--border-radius);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+.hero-section h1 {
+    color: white;
+    font-weight: 700;
+}
+.hero-section p {
+    font-size: 1.25rem;
+}
+.hero-section .btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+.hero-section .btn-primary:hover {
+    background-color: #d35400; /* Darker accent */
+    border-color: #d35400;
+}
+.hero-section .btn-secondary {
+    background-color: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.5);
+    color: white;
+}
+.hero-section .btn-secondary:hover {
+    background-color: rgba(255,255,255,0.3);
+    border-color: white;
+}
+
+
+/* Homepage Feature Blocks */
+.feature-block {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.feature-block .btn {
+    font-weight: 600;
+}
+
+
+/* Dashboard Specific Styles */
+/* Base for all sidebars */
+.dashboard-sidebar {
+    min-width: 260px;
+    max-width: 252px;
+    flex-shrink: 0; 
+    top: var(--navbar-height);
+    background-color: #2c3e50;
+    color: var(--light-text);
+    padding: 20px 15px;
+    height: calc(100vh - var(--navbar-height));
+    position: fixed;
+    top: 88px;
+    left: 0;
+    overflow-y: auto;
+    z-index: 999;/* Ensure it's above content if content scrolls under */
+}
+.dashboard-sidebar .nav-link.logout-btn,
+.dashboard-sidebar .nav-link[href*="logout"] {
+    color: #fff !important;
+}
+.dashboard-sidebar .nav-link.logout-btn:hover,
+.dashboard-sidebar .nav-link[href*="logout"]:hover {
+    color: #fff !important;
+    background-color: #e74c3c !important;
+}
+.dashboard-sidebar .nav-link {
+    color: rgba(255,255,255,0.7);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+.dashboard-sidebar .nav-link i {
+    font-size: 16px !important; /* Force smaller size */
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;    
+    margin-right: 10px;
+    
+    text-align: center;
+    
+}
+.dashboard-sidebar .nav-link:hover, 
+.dashboard-sidebar .nav-link.active {
+    color: #fff;
+    background-color: var(--primary-color); /* Use primary color for active/hover */
+    /* box-shadow: -3px 0 0 var(--secondary-color) inset; */ /* Alternative active indicator */
+}
+.dashboard-sidebar .nav-item hr {
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+
+/* Main content area for dashboards */
+ .dashboard-content.page-header  {
+    margin-left: 260px;
+    
+     margin-bottom: 1rem; 
+      padding-bottom: 0.5rem; /* Same as sidebar width */
+    padding: 25px; /* Main content padding */
+    width: calc(100% - 260px);
+    flex-grow: 1;
+    margin-top: 0;  /* Ensure it takes remaining space */
+};
+
+/* Adjustments for fixed top navbar in dashboards */
+.dashboard-wrapper { /* This wrapper goes around sidebar and content INSIDE the main body container */
+    display: flex;
+    /*padding-top: 56px;  Height of the fixed navbar */
+    flex-grow: 1;
+    
+}
+.dashboard-content > .accordion:first-child,
+.dashboard-content > form:first-child { /* Assuming filter form is directly under dashboard-content */
+    margin-top: 0.5rem !important; 
+}
+
+.dashboard-content .list-group-item {
+    padding: 1rem 1.25rem; /* Consistent padding */
+    font-size: 1rem;
+}
+.dashboard-content .list-group-item i {
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+}
+.dashboard-content h3.system-management-title { /* Add this class to the H3 */
+    margin-top: 2.5rem; /* More space above this section title */
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+/* Specific Panel Navbars (if different from main) */
+.admin-navbar, .doctor-navbar, .user-navbar { /* Add these classes to respective navbars */
+    background-color: var(--dark-text) !important; /* Example: Dark navbar for panels */
+    /* or theme them: */
+    .admin-navbar { background-color: #c0392b !important; } /* Reddish for admin */
+    .doctor-navbar { background-color: #27ae60 !important; } /* Greenish for doctor */
+    .user-navbar { background-color: var(--primary-color) !important; } /* Blue for user */
+}
+.admin-stat-card {
+    color: white; /* Default text color for stat cards */
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem; /* Consistent margin */
+    display: flex;
+    flex-direction: column; /* Ensure footer is at bottom */
+    height: 100%; /* Make cards in a row same height */
+}
+
+.admin-stat-card .card-body {
+    padding: 1.25rem;
+    flex-grow: 1; /* Allow body to grow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-stat-card .stat-text h5 {
+    margin-bottom: 0.25rem;
+    font-size: 1rem; /* Smaller title */
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.admin-stat-card .stat-text .stat-number {
+    font-size: 2.25rem; /* Larger number */
+    font-weight: 700;
+    line-height: 1;
+}
+.admin-stat-card .stat-icon {
+    display: flex;
+    align-items: center;
+}
+.admin-stat-card .stat-icon i {
+    font-size: 1.3rem !important; /* Even smaller */
+    opacity: 0.7;
+}
+
+.admin-stat-card .card-footer {
+    background-color: rgba(0,0,0,0.15); /* Slightly darker footer */
+    border-top: none; /* Remove default border if any */
+    padding: 0.6rem 1.25rem;
+    font-size: 0.85rem;
+}
+.admin-stat-card .card-footer a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+}
+.admin-stat-card .card-footer a:hover {
+    color: #fff;
+}
+
+
+/* Specific colors for admin stat cards (examples) */
+.admin-stat-card.bg-primary .card-footer { background-color: rgba(0,0,0,0.2); }
+.admin-stat-card.bg-success .card-footer { background-color: rgba(0,0,0,0.2); }
+.admin-stat-card.bg-warning { color: var(--dark-text); } /* Ensure text readable on yellow */
+.admin-stat-card.bg-warning .card-footer { background-color: rgba(0,0,0,0.08); }
+.admin-stat-card.bg-warning .card-footer a { color: var(--dark-text); opacity: 0.8;}
+.admin-stat-card.bg-warning .card-footer a:hover { opacity: 1;}
+.admin-stat-card.bg-danger .card-footer { background-color: rgba(0,0,0,0.2); }
+.admin-stat-card.bg-info .card-footer { background-color: rgba(0,0,0,0.2); }
+.admin-stat-card.bg-secondary .card-footer { background-color: rgba(0,0,0,0.2); }
+
+
+.admin-navbar .navbar-brand,
+.doctor-navbar .navbar-brand,
+.user-navbar .navbar-brand {
+    color: rgb(255, 255, 255) !important;
+}
+
+
+/* Responsive adjustments for sidebar */
+@media (max-width: 991.98px) {
+    .dashboard-sidebar {
+        position: static; /* Becomes part of normal flow */
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+
+    }
+    .dashboard-sidebar:not(.offcanvas-body .dashboard-sidebar) { 
+         transform: translateX(-100%); 
+          display: none;
+    }
+    .dashboard-content.page-header + * {
+        margin-top: 0.5rem !important; 
+        width: 100%;
+    }
+    .dashboard-wrapper {
+        flex-direction: column;
+        padding-top: 56px; /* Still needed for fixed navbar */
+    }
+     .dashboard-content {
+        margin-left: 0; /* No sidebar margin on mobile */
+        width: 100%;
+    }
+}
+
+/* Utilities */
+.text-primary { color: var(--primary-color) !important; }
+.text-secondary { color: var(--secondary-color) !important; }
+.text-accent { color: var(--accent-color) !important; }
+
+.bg-primary-soft { background-color: rgba(52, 152, 219, 0.1); }
+.bg-secondary-soft { background-color: rgba(46, 204, 113, 0.1); }
+
+.shadow-soft { box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.04) !important; }
+.shadow-strong { box-shadow: 0 1rem 3rem rgba(0,0,0,0.175) !important; }
+
+/* Add a placeholder for a hero background image for index.php */
+/* Create an 'img' folder inside 'assets' if you don't have one */
+/* For example: assets/img/hero-bg.jpg (find a suitable royalty-free medical background) */
+
+/* Chatbox styling refinement (from previous feature) */
+.chat-box {
+    background-color: #fdfdfd;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+.message.sent {
+    background-color: var(--primary-color);
+}
+.message.received {
+    background-color: #e9ecef;
+}
+.dashboard-wrapper { /* PD  */
+        flex-direction: column; 
+}
+/* Review Stars (if you want to style the display ones consistently) */
+.review-stars .bi-star-fill, .review-stars .bi-star-half, .review-stars .bi-star {
+    color: #ffc107; /* Bootstrap warning yellow for stars */
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+}
+
+.find-doctor-page {
+    min-height: calc(100vh - var(--navbar-height) - 100px);
+    display: flex;
+    flex-direction: column;
+}
+
+.doctor-wrapper {
+    display: flex;
+    gap: 1rem; /* reduce space between sidebar and main content */
+}
+
+.doctor-content {
+    flex-grow: 1;
+    padding: 25px;
+    margin-left: 0; /* remove any extra margin */
+}
