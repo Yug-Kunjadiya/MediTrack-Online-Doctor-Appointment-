@@ -10,6 +10,21 @@ MediTrack is a full-featured online doctor appointment booking platform built wi
 - **Invoice Generation** – PDF invoices generated automatically via FPDF when an appointment is approved.
 - **Real-Time Chat** – In-appointment chat between patients and doctors using AJAX polling.
 - **Star Rating & Reviews** – Patients can leave reviews for completed appointments.
+  
+## Demo
+
+<img width="1891" height="787" alt="Screenshot 2025-06-27 221553" src="https://github.com/user-attachments/assets/401a2f42-f024-4ca4-b5c1-7a552c90246b" />
+<img width="1776" height="574" alt="image" src="https://github.com/user-attachments/assets/3a92d862-b770-42f9-bbaa-8cb6d4c60e1f" />
+<img width="1828" height="542" alt="image" src="https://github.com/user-attachments/assets/93ede4b1-87a9-4d65-ba08-48933b8dec3e" />
+
+<img width="1898" height="866" alt="Screenshot 2025-07-10 234204" src="https://github.com/user-attachments/assets/91aac799-9d54-46c8-82d5-3bbfdd0546c5" />
+<img width="1900" height="871" alt="Screenshot 2025-07-10 234213" src="https://github.com/user-attachments/assets/9f8962e0-0342-4cf3-87db-8084d6475eff" />
+
+<img width="1900" height="870" alt="Screenshot 2025-07-10 234224" src="https://github.com/user-attachments/assets/128aa7ab-5be6-4214-9960-408aa6371ab4" />
+<img width="1895" height="864" alt="Screenshot 2025-07-10 234337" src="https://github.com/user-attachments/assets/2f7b23fc-9277-4bf0-8a4a-44e11b12ed22" />
+
+
+
 
 ## Tech Stack
 
