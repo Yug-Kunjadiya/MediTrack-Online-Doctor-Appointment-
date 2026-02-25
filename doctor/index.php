@@ -125,7 +125,7 @@ $today_appointments_result = mysqli_stmt_get_result($stmt_today);
             </div>
             <div class="card-body text-center d-flex flex-column align-items-center">
                 <?php
-                $image_path_display = $base_url . '/assets/img/default_avatar.png'; 
+                $image_path_display = $base_url . '/assets/img/default_avatar.svg'; 
                 $actual_image_filename = $current_doctor_profile_image_db;
                 if (!empty($actual_image_filename) && file_exists(PROFILE_UPLOAD_DIR_DASH . $actual_image_filename)) {
                     $image_path_display = $base_url . '/uploads/doctors/' . htmlspecialchars($actual_image_filename);
@@ -176,7 +176,13 @@ $today_appointments_result = mysqli_stmt_get_result($stmt_today);
                                 </li>
                             <?php endwhile; ?>
                             </ul>
-                            <?php if(mysqli_num_rows(mysqli_query($conn, "SELECT id FROM appointments WHERE doctor_id = $doctor_id AND status = 'pending'")) > 5): ?>
+                            <?php 
+                            $stmt_pending_count = mysqli_prepare($conn, "SELECT COUNT(*) as cnt FROM appointments WHERE doctor_id = ? AND status = 'pending'");
+                            mysqli_stmt_bind_param($stmt_pending_count, 'i', $doctor_id);
+                            mysqli_stmt_execute($stmt_pending_count);
+                            $pending_count_row = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt_pending_count));
+                            mysqli_stmt_close($stmt_pending_count);
+                            if((int)($pending_count_row['cnt'] ?? 0) > 5): ?>
                                 <a href="<?php echo $base_url; ?>/doctor/view_appointments.php?filter_status=pending" class="btn btn-sm btn-outline-secondary mt-2 d-block">View All Pending</a>
                             <?php endif; ?>
                         <?php else: ?>

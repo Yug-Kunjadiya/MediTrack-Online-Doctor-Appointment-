@@ -58,7 +58,7 @@ while($spec_row = mysqli_fetch_assoc($spec_result)){ $specializations_array[] = 
             <div class="card h-100 shadow-sm doctor-card"> 
                 <div class="card-body d-flex flex-column text-center align-items-center">
                     <?php
-                    $doc_list_image_path = $base_url . '/assets/img/default_avatar.png'; 
+                    $doc_list_image_path = $base_url . '/assets/img/default_avatar.svg'; 
                     if (!empty($doctor['profile_image']) && file_exists(__DIR__ . '/../uploads/doctors/' . $doctor['profile_image'])) {
                         $doc_list_image_path = $base_url . '/uploads/doctors/' . htmlspecialchars($doctor['profile_image']);
                     }

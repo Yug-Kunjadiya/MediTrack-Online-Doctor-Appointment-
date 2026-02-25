@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_invoice_status'
 $filter_invoice_status = isset($_GET['filter_status']) ? mysqli_real_escape_string($conn, $_GET['filter_status']) : '';
 $sql_invoices = "SELECT 
                     i.id as invoice_id, i.invoice_uid, i.amount, i.currency, i.status as invoice_status, 
-                    i.created_at as invoice_created_at, i.due_date, i.payment_details, /* Added payment_details */
+                    i.created_at as invoice_created_at, i.due_date, i.payment_details,
                     a.id as appointment_id, a.appointment_date,
                     u.name as patient_name, 
                     d.name as doctor_name

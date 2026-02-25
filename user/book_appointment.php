@@ -22,7 +22,7 @@ if (!$doctor) {
     redirect($base_url . '/user/view_doctors.php');
 }
 
-$doctor_profile_image_display_page = $base_url . '/assets/img/default_avatar.png';
+$doctor_profile_image_display_page = $base_url . '/assets/img/default_avatar.svg';
 if (!empty($doctor['profile_image']) && file_exists(__DIR__ . '/../uploads/doctors/' . $doctor['profile_image'])) {
     $doctor_profile_image_display_page = $base_url . '/uploads/doctors/' . htmlspecialchars($doctor['profile_image']);
 }

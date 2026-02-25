@@ -99,7 +99,7 @@ if (isset($_GET['action']) && isset($_GET['id']) && isset($_GET['status'])) {
             set_message("Error updating appointment status: " . mysqli_error($conn), "danger");
         }
         mysqli_stmt_close($stmt_update);
-        redirect($base_url . '/admin/view_appointments.php' . (isset($_GET['filter_status_appt']) ? '?filter_status='.$_GET['filter_status_appt'] : ''));
+        redirect($base_url . '/admin/view_appointments.php' . (isset($_GET['filter_status_appt']) ? '?filter_status_appt='.$_GET['filter_status_appt'] : ''));
     } else {
         set_message("Invalid status provided.", "danger");
         redirect($base_url . '/admin/view_appointments.php');

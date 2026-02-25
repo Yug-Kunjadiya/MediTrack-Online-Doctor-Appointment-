@@ -6,10 +6,10 @@ if (session_status() == PHP_SESSION_NONE) {
 
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root'); // Your MySQL username
-define('DB_PASSWORD', 'root');     // Your MySQL password (default for XAMPP)
+define('DB_PASSWORD', '');     // Your MySQL password (default for XAMPP)
 define('DB_NAME', 'meditrack_db');
 
-$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME,3307);
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME, 3306);
 
 if ($conn === false) {
     die("ERROR: Could not connect. " . mysqli_connect_error());

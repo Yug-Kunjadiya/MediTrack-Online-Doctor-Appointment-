@@ -1,0 +1,21 @@
+# Uploaded files (doctor profile images)
+uploads/doctors/*
+!uploads/doctors/.gitkeep
+
+# FPDF cached font data
+includes/fpdf/font/*.z
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# PHP error logs
+*.log
+error_log
+
+# Sensitive config (optional – uncomment if you use env files)
+# .env

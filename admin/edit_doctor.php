@@ -163,5 +163,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <a href="<?php echo $base_url; ?>/admin/manage_doctors.php" class="btn btn-secondary">Cancel</a>
 </form>
 
-<?php mysqli_close($conn); ?>
 <?php require_once 'partials/admin_footer.php'; ?>
