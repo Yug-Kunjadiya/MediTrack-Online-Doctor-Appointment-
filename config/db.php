@@ -8,8 +8,9 @@ define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root'); // Your MySQL username
 define('DB_PASSWORD', '');     // Your MySQL password (default for XAMPP)
 define('DB_NAME', 'meditrack_db');
+define('DB_PORT', 3307);       // XAMPP MySQL runs on 3307 (MySQL 8.0 occupies 3306)
 
-$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME, 3306);
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT);
 
 if ($conn === false) {
     die("ERROR: Could not connect. " . mysqli_connect_error());
